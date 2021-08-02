@@ -6,4 +6,5 @@ https://ciamac-da.github.io/infinite-scroll-posts-vanilla-js/
 
 ![](assets/3.jpg)
 
+Search Filter ==>
 ![](assets/4.jpg)
