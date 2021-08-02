@@ -31,6 +31,23 @@ postsContainer.appendChild(postEL)
 // Show initial posts
 showPosts()
 
+// Filter posts by input
+const filterPosts = (e) => {
+const term = e.target.value.toUpperCase()
+const posts = document.querySelectorAll(".post")
+posts.forEach(post => {
+  const id = post.querySelector(".number").innerText.toUpperCase()
+  const title = post.querySelector(".post-title").innerText.toUpperCase()
+  const body = post.querySelector(".post-body").innerText.toUpperCase()
+  if(id.indexOf(term) > -1 || title.indexOf(term) > -1 || body.indexOf(term) > -1) {
+    post.style.display = "flex"
+  } else {
+    post.style.display = "none"
+  }
+})
+}
+
+
 // Show loader & fetch more posts
 const showLoading = () => {
  loading.classList.add("show")
@@ -54,3 +71,6 @@ window.addEventListener("scroll",  () => {
    showLoading()
   }
 })
+
+// Filter posts event
+filter.addEventListener("input", filterPosts)
